@@ -12,6 +12,7 @@ createServer({
       return [
         {
           id: 1,
+          name: 'Jamal',
           title: 'Transaction 1',
           amout: 400,
           type: 'deposit',
