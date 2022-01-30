@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     /* font-size> 16px */
-    hmtl {
+    html {
  
         @media (max-width: 1080px) {
             font-size: 93.75%;/* 15px */
