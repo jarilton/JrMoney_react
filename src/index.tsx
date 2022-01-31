@@ -18,6 +18,24 @@ createServer({
           type: 'deposit',
           category: 'food',
           createdAt: new Date()
+        },
+        {
+          id: 2,
+          name: 'Marie',
+          title: 'Transaction 2',
+          amout: 990,
+          type: 'withraw',
+          category: 'vehicle',
+          createdAt: new Date()
+        },
+        {
+          id: 3,
+          name: 'Tom',
+          title: 'Transaction 3',
+          amout: 159,
+          type: 'withraw',
+          category: 'home',
+          createdAt: new Date()
         }
       ]
     })
