@@ -1,43 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createServer } from 'miragejs';
+import { createServer, Model } from 'miragejs';
 import { App } from './App';
+import schema from 'miragejs/orm/schema';
 
 //Servidor API fake
 createServer({
+
+  models: {
+    transactions: Model,
+  },
+
   routes() {
     this.namespace = 'api';
 
     this.get('transactions', () => {
-      return [
-        {
-          id: 1,
-          name: 'Jamal',
-          title: 'Transaction 1',
-          amout: 400,
-          type: 'deposit',
-          category: 'food',
-          createdAt: new Date()
-        },
-        {
-          id: 2,
-          name: 'Marie',
-          title: 'Transaction 2',
-          amout: 990,
-          type: 'withraw',
-          category: 'vehicle',
-          createdAt: new Date()
-        },
-        {
-          id: 3,
-          name: 'Tom',
-          title: 'Transaction 3',
-          amout: 159,
-          type: 'withraw',
-          category: 'home',
-          createdAt: new Date()
-        }
-      ]
+      return this.schema.all('transaction')
+    })
+
+    this.post('/transactions', (schema, request) => {
+      const data = JSON.parse(request.requestBody)
+
+      return schema.create('transaction', data);
     })
   }
 })
