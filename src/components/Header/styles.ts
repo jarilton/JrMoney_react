@@ -11,11 +11,25 @@ export const Content = styled.div`
     padding: 2rem 1rem 12rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+
+    img {
+        width: 50px;
+    }
+
+    h1 {
+        color: var(--shape);
+        margin: 10px;
+    }
 
     button {
+        /* Faz com que o botão apareça na direita */
+        margin-left: auto;
+        margin-top: 1em;
+
+        /* --- */
         font-size: 1rem;
-        color: #000000;
+        color: #ffffff;
         background: var(--blue-ligth);
         border: 0;
         padding: 0 2rem;
